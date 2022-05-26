@@ -40,7 +40,7 @@ post '/visit' do
 	@phone = params[:phone]
 	@datetime = params[:datetime]
 	@barber = params[:barber]
-	@color = params[:color]
+	@colour = params[:colour]
 
 	# хеш
 	hh = { 	:username => 'Введите имя',
@@ -64,8 +64,9 @@ post '/visit' do
 			colour
 
 		)
-		values (?,?,?,?,?)'
+		values (?,?,?,?,?)',
+		[@username, @phone, @datetime, @barber, @colour]
 
-	erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
+	erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@colour}"
 
 end

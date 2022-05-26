@@ -9,7 +9,10 @@ $(function() {
   // тут я могу написать любой javascript код, который исполнится
   // после загрузки страницы
 
-  $('#color').simplecolorpicker();
+  $('#colour').simplecolorpicker();
+  $('#datetimepicker1').datetimepicker({
+      locale: 'ru'
+  });
 
 });
 
@@ -30,9 +33,15 @@ $(function() {
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
+    <!-- элемент input с id = datetimepicker1 -->
+      <div class="input-group" id="datetimepicker1">
+        <input name="datetime" type="text" class="form-control"
+               placeholder="Введите дату и время" value="<%= @datetime %>" />
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+      </div>
   </div>
-
 
   <div class="form-group">
     <label>Ваш парикмахер:</label>
@@ -45,7 +54,7 @@ $(function() {
 
   <div class="form-group">
     <label>В какие цвета хотите себя окрасить: </label>
-    <select id="color" name="color">
+    <select id="colour" name="colour">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
