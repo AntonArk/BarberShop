@@ -1,18 +1,27 @@
-<table class="table">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Дата записи</th>
+            <th>Барбер</th>
+            <th>Цвет</th>
+        </tr>
+    </thead>
 
-  <tr>
-    <td>AA</td>
-    <td>BB</td>
-  </tr>
-
-  <tr>
-    <td>CC</td>
-    <td>DD</td>
-  </tr>
-
-  <tr>
-    <td>EE</td>
-    <td>FF</td>
-  </tr>
-
+    <body>
+        <% @results.each do |row| %>
+            <tr>
+                <td><%= row['id'] %></td>
+                <td><%= row['username'] %></td>
+                <td><%= row['phone'] %></td>
+                <td><%= row['date_stamp'] %></td>
+                <td><%= row['barber']%></td>
+                <td><%= row['colour'] %></td>
+            </tr>
+      
+        <% end %>
+  </body>
+  
 </table>

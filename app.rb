@@ -22,6 +22,7 @@ configure do
 			"colour"	TEXT,
 			PRIMARY KEY("id" AUTOINCREMENT)
 		)'
+	db.close
 end
 
 get '/' do
@@ -68,11 +69,16 @@ post '/visit' do
 		)
 		values (?,?,?,?,?)',
 		[@username, @phone, @datetime, @barber, @colour]
+        db.close
 
 	erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@colour}"
 
 end
 
 get '/showusers' do
+	db = get_db
+
+    @results = db.execute 'SELECT * FROM Users ORDER BY id ASC'
+
 	erb :showusers
 end
