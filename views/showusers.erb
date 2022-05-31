@@ -10,18 +10,18 @@
         </tr>
     </thead>
 
-    <body>
+    <tbody>
         <% @results.each do |row| %>
             <tr>
                 <td><%= row['id'] %></td>
                 <td><%= row['username'] %></td>
-                <td><%= row['phone'] %></td>
+                <td><%= row['phone'] %></td> 
                 <td><%= row['date_stamp'] %></td>
                 <td><%= row['barber']%></td>
-                <td><%= row['colour'] %></td>
+                <td><%= row['colour'] %></td> 
             </tr>
       
         <% end %>
-  </body>
-  
+  </tbody>
+
 </table>
