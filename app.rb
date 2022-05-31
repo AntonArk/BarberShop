@@ -9,7 +9,7 @@ end
 
 def seed_db db, barbers
 	barbers.each do |barber|
-		if !is_barber_exists? db, barber
+		if !is_barber_exists? db, barber   # если такого барбера нет
 			db.execute 'INSERT INTO Barbers (barber_name) values (?)', [barber]
 		end
 	end
@@ -19,6 +19,11 @@ def get_db
     db = SQLite3::Database.new 'BarberShop.db'
     db.results_as_hash = true
     return db
+end
+
+before do
+	db = get_db
+	@barbers = db.execute 'SELECT * from Barbers'
 end
 
 configure do 
