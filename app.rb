@@ -97,7 +97,7 @@ post '/visit' do
 		[@username, @phone, @datetime, @barber, @colour]
         db.close
 
-	erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@colour}"
+	erb "<h2>Спасибо, Вы записаны!</h2>"
 
 end
 
